@@ -1,0 +1,3 @@
+2026-01-29 12:42:36.868 xcodebuild[93344:9366005] Writing error result bundle to /var/folders/6d/8y8j7pj52j52t53dmwv9xp0h0000gn/T/ResultBundle_2026-29-01_12-42-0036.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ platform:iOS Simulator, OS:18.5, name:iPhone 16 Pro }

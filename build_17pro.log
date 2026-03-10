@@ -1,0 +1,6 @@
+2026-01-29 13:05:18.594 xcodebuild[94217:9387588] Writing error result bundle to /var/folders/6d/8y8j7pj52j52t53dmwv9xp0h0000gn/T/ResultBundle_2026-29-01_13-05-0018.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ platform:iOS Simulator, OS:latest, name:iPhone 17 Pro }
+
+	Ineligible destinations for the "SmartBudgetPWDA" scheme:
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }

@@ -1,0 +1,504 @@
+--- xcodebuild: WARNING: Ignoring provided run destination because no scheme was passed.
+/* com.apple.ibtool.errors */
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/LaunchScreen.storyboard: error: iOS 26.2 Platform Not Installed.
+error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Clang dependency scanner failure: fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+fatal error: module map file '/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/build/Debug/react-native-geolocation-service/react_native_geolocation_service.modulemap' not found
+
+error: Unable to find module dependency: '_SwiftConcurrencyShims'
+note: a dependency of main module 'SmartBudgetPWDA'
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/AppDelegate.swift:1:8: error: Unable to find module dependency: 'UIKit'
+import UIKit
+       ^
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/AppDelegate.swift:1:8: note: a dependency of main module 'SmartBudgetPWDA'
+import UIKit
+       ^
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/AppDelegate.swift:2:8: error: Unable to find module dependency: 'React'
+import React
+       ^
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/AppDelegate.swift:2:8: note: a dependency of main module 'SmartBudgetPWDA'
+import React
+       ^
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/AppDelegate.swift:3:8: error: Unable to find module dependency: 'React_RCTAppDelegate'
+import React_RCTAppDelegate
+       ^
+/Users/swapnilgadgade/Desktop/Raj/PWD/29JanFrontend-main/ios/SmartBudgetPWDA/AppDelegate.swift:3:8: note: a dependency of main module 'SmartBudgetPWDA'
+import React_RCTAppDelegate
+       ^

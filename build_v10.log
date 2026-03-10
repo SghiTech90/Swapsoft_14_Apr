@@ -1,0 +1,2 @@
+2026-01-29 12:52:12.408 xcodebuild[93801:9376069] Writing error result bundle to /var/folders/6d/8y8j7pj52j52t53dmwv9xp0h0000gn/T/ResultBundle_2026-29-01_12-52-0012.xcresult
+xcodebuild: error: Found no destinations for the scheme 'SmartBudgetPWDA' and action build.

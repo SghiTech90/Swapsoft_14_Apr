@@ -1,0 +1,11 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace ios/SmartBudgetPWDA.xcworkspace -scheme SmartBudgetPWDA -configuration Debug -destination "platform=iOS Simulator,name=iPhone 16 Pro" build
+
+2026-01-29 12:19:49.057 xcodebuild[58445:8012363] Writing error result bundle to /var/folders/6d/8y8j7pj52j52t53dmwv9xp0h0000gn/T/ResultBundle_2026-29-01_12-19-0049.xcresult
+xcodebuild: error: Unable to find a device matching the provided destination specifier:
+		{ platform:iOS Simulator, OS:latest, name:iPhone 16 Pro }
+
+	The requested device could not be found because no available devices matched the request.
+
+	Ineligible destinations for the "SmartBudgetPWDA" scheme:
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }

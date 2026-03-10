@@ -1,0 +1,13 @@
+2026-01-29 12:47:02.239 xcodebuild[93481:9370544] Writing error result bundle to /var/folders/6d/8y8j7pj52j52t53dmwv9xp0h0000gn/T/ResultBundle_2026-29-01_12-47-0002.xcresult
+xcodebuild: error: Unable to find a device matching the provided destination specifier:
+		{ platform:iOS Simulator, OS:latest, name:iPhone 16 Pro }
+
+	The requested device could not be found because no available devices matched the request.
+
+	Available destinations for the "Pods-PWDAkolaSmartBudget" scheme:
+		{ platform:macOS, arch:arm64, variant:Mac Catalyst, id:00008103-000671DC026A201E, name:My Mac }
+		{ platform:macOS, arch:x86_64, variant:Mac Catalyst, id:00008103-000671DC026A201E, name:My Mac }
+		{ platform:macOS, variant:Mac Catalyst, name:Any Mac }
+
+	Ineligible destinations for the "Pods-PWDAkolaSmartBudget" scheme:
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }

@@ -1,0 +1,9 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace ios/SmartBudgetPWDA.xcworkspace -scheme SmartBudgetPWDA -configuration Debug -destination id=F6AE2A42-8D24-4B58-AB96-918B29AFC873 build
+
+2026-01-29 12:49:28.111 xcodebuild[93702:9373990] Writing error result bundle to /var/folders/6d/8y8j7pj52j52t53dmwv9xp0h0000gn/T/ResultBundle_2026-29-01_12-49-0028.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ id:F6AE2A42-8D24-4B58-AB96-918B29AFC873 }
+
+	Ineligible destinations for the "SmartBudgetPWDA" scheme:
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }
