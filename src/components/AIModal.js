@@ -1,381 +1,434 @@
-import React, {useEffect, useRef, useState, useCallback} from 'react';
+/**
+ * AIModal.js
+ *
+ * VOICE_TEST_MODE = true  → just listen + display text, no command matching
+ * VOICE_TEST_MODE = false → full report selection + download flow
+ */
 
+// ── SET THIS TO false TO RESTORE FULL FUNCTIONALITY ──────────────────────────
+const VOICE_TEST_MODE = false;
+
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import {
-  View,
-  Text,
-  Modal,
-  TouchableOpacity,
-  StyleSheet,
-  Animated,
-  Dimensions,
-  PermissionsAndroid,
-  ScrollView,
+  View, Text, Modal, TouchableOpacity, StyleSheet,
+  Animated, Dimensions, ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Toaster} from './Toast';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Svg, {Circle} from 'react-native-svg';
-import ReactNativeBlobUtil from 'react-native-blob-util';
-import XLSX from 'xlsx';
-import {Platform} from 'react-native';
-import {buildingAllHEADApi} from '../Api/MPRReportApi';
-import {CrfMPRreportAllHEADApi} from '../Api/MPRReportApi';
-import {ROADAllHEADApi} from '../Api/MPRReportApi';
-import {NABARDAllHEADApi} from '../Api/MPRReportApi';
-import {AunnityAllHEADApi} from '../Api/MPRReportApi';
-import {MASTERHEADWISEREPOSTBuildingApi} from '../Api/ReportApi';
-import {MASTERHEADWISEREPOSTCRFApi} from '../Api/ReportApi';
-import {MASTERHEADWISEREPOSTAnnuityApi} from '../Api/ReportApi';
-import {MASTERHEADWISEREPOSTRoadApi} from '../Api/ReportApi';
-import {MASTERHEADWISEREPOSTNabardApi} from '../Api/ReportApi';
+import Svg, { Circle } from 'react-native-svg';
 
-const {width, height} = Dimensions.get('window');
+import useAIVoice from './useAIVoice';
+import useAIDownload from './useAIDownload';
 
-const AIModal = ({visible, onClose}) => {
-  // Animation values
+const { width, height } = Dimensions.get('window');
+
+// ── MUST be at module level — creating inside render = crash on Android ──────
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+
+// ── Module-level — voice callbacks read these directly, never stale ──────────
+export const BUTTON_DATA = [
+  { label: 'MPR', color: '#28a745', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan'], keywords: ['mpr', 'एम पी आर'] },
+  { label: 'Headwise', color: '#fa9c19', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan'], keywords: ['headwise', 'हेड वाईज'] },
+  { label: 'All', color: '#14b8a6', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan'], keywords: ['all', 'सर्व'] },
+  { label: 'Abstract', color: '#a78bfa', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan'], keywords: ['abstract', 'अॅबस्ट्रॅक्ट', 'संक्षिप्त'] },
+];
+export const SUB_KEYWORDS = {
+  Building: ['building', 'इमारत', 'बांधकाम'],
+  CRF: ['crf', 'सीआरएफ'],
+  Road: ['road', 'रस्ता', 'मार्ग'],
+  Annuity: ['annuity', 'अॅन्युइटी'],
+  NABARD: ['nabard', 'नाबार्ड'],
+  NonPlan: ['nonplan', 'नॉन प्लॅन'],
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
+const AIModal = ({ visible, onClose }) => {
+  // ── Animated values ────────────────────────────────────────────────────────
   const translateY = useRef(new Animated.Value(500)).current;
   const opacity = useRef(new Animated.Value(0)).current;
-  
-  // Phase-based state: 0=hidden, 1=msg1, 2=msg2, 3=msg3, 4=buttons
+  const progressAnim = useRef(new Animated.Value(0)).current;
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+  const pulseLoopRef = useRef(null);
+
+  // ── UI state ───────────────────────────────────────────────────────────────
   const [phase, setPhase] = useState(0);
-  
-  // Other states
+  const [headerStep, setHeaderStep] = useState(0);
   const [location, setLocation] = useState(null);
   const [expandedButtons, setExpandedButtons] = useState(null);
-  const [downloading, setDownloading] = useState(false);
   const [selectedButtonColor, setSelectedButtonColor] = useState(null);
-  const progress = useRef(new Animated.Value(10)).current;
-  const [progressValue, setProgressValue] = useState(10);
   const [selectedSection, setSelectedSection] = useState(null);
+  const [downloading, setDownloading] = useState(false);
+  const [progressValue, setProgressValue] = useState(10);
+  const [isListening, setIsListening] = useState(false);
+  const [transcript, setTranscript] = useState('');
 
-  const locationLabelMap = {
-    P_W_Circle_Akola: 'सा. बां. मंडळ, अकोला',
-    P_W_Division_Akola: 'सा. बां. विभाग, अकोला',
-    P_W_Division_WBAkola: 'जा. बँ. प्रकल्प विभाग, अकोला',
-    P_W_Division_Washim: 'सा. बां. विभाग, वाशिम',
-    P_W_Division_Buldhana: 'सा. बां. विभाग, बुलढाणा',
-    P_W_Division_Khamgaon: 'सा. बां. विभाग, खामगांव',
-  };
+  // ── Refs ───────────────────────────────────────────────────────────────────
+  const visibleRef = useRef(false);
+  const phaseRef = useRef(0);
+  const downloadingRef = useRef(false);
+  const expandedRef = useRef(null);
+  const selectedSecRef = useRef(null);
+  const pendingCommandRef = useRef(null);
+  // FIX 1: blocks stale post-restart / pre-settle commands
+  const mountReadyRef = useRef(false);
+  // FIX 2: prevents phase-2 effect re-triggering startListening after category selected
+  const categorySelectedRef = useRef(false);
 
-  const messages = [
-    'सार्वजनिक बांधकाम मंडळ,अकोला',
-    locationLabelMap[location] || 'सार्वजनिक बांधकाम मंडळ',
-    'एआय जनरेट अर्थसंकल्पीय रिपोर्ट २०२५',
-  ];
+  useEffect(() => { visibleRef.current = visible; }, [visible]);
+  useEffect(() => { phaseRef.current = phase; }, [phase]);
+  useEffect(() => { downloadingRef.current = downloading; }, [downloading]);
+  useEffect(() => { expandedRef.current = expandedButtons; }, [expandedButtons]);
+  useEffect(() => { selectedSecRef.current = selectedSection; }, [selectedSection]);
 
-  const staticData = {
-    Building: {fileName: 'Building_Report.xlsx'},
-    CRF: {fileName: 'CRF_Report.xlsx'},
-    Annuity: {fileName: 'Annuity_Report.xlsx'},
-    NABARD: {fileName: 'NABARD_Report.xlsx'},
-    Road: {fileName: 'Road_Report.xlsx'},
-  };
+  // ── Pulse ─────────────────────────────────────────────────────────────────
+  const stopPulse = useCallback(() => {
+    if (pulseLoopRef.current) {
+      pulseLoopRef.current.stop();
+      pulseLoopRef.current = null;
+    }
+    Animated.timing(pulseAnim, {
+      toValue: 1, duration: 150, useNativeDriver: true,
+    }).start();
+  }, [pulseAnim]);
 
-  const HeadWiseData = {
-    Building: {fileName: 'Headwise_Building_Report.xlsx'},
-    CRF: {fileName: 'Headwise_CRF_Report.xlsx'},
-    Annuity: {fileName: 'Headwise_Annuity_Report.xlsx'},
-    NABARD: {fileName: 'Headwise_NABARD_Report.xlsx'},
-    Road: {fileName: 'Headwise_Road_Report.xlsx'},
-  };
+  const startPulse = useCallback(() => {
+    stopPulse();
+    const loop = Animated.loop(Animated.sequence([
+      Animated.timing(pulseAnim, { toValue: 1.8, duration: 500, useNativeDriver: true }),
+      Animated.timing(pulseAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
+    ]));
+    pulseLoopRef.current = loop;
+    loop.start();
+  }, [pulseAnim, stopPulse]);
 
-  const AllHeadWiseData = {
-    Building: {fileName: 'All_Headwise_Building_Report.xlsx'},
-    CRF: {fileName: 'All_Headwise_CRF_Report.xlsx'},
-    Annuity: {fileName: 'All_Headwise_Annuity_Report.xlsx'},
-    NABARD: {fileName: 'All_Headwise_NABARD_Report.xlsx'},
-    Road: {fileName: 'All_Headwise_Road_Report.xlsx'},
-  };
+  // ── onCommand — stores spoken text, triggers useEffect via tick ───────────
+  const [commandTick, setCommandTick] = useState(0);
 
-  const buttonData = [
-    {label: 'MPR', color: '#28a745', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan']},
-    {label: 'Headwise', color: '#fa9c19', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan']},
-    {label: 'All', color: '#14b8a6', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan']},
-    {label: 'Abstract', color: '#a78bfa', subButtons: ['Building', 'CRF', 'Annuity', 'NABARD', 'Road', 'NonPlan']},
-  ];
-
-  // Load location on mount
-  useEffect(() => {
-    const fetchUserDetails = async () => {
-      try {
-        const storedLocation = await AsyncStorage.getItem('LOCATION_ID');
-        if (storedLocation) setLocation(storedLocation);
-      } catch (error) {
-        console.error('Error fetching user details:', error);
-      }
-    };
-    fetchUserDetails();
+  const onCommandWithTick = useCallback((spoken) => {
+    try {
+      if (!spoken || typeof spoken !== 'string') return;
+      console.log('[AIModal] onCommand received:', spoken);
+      pendingCommandRef.current = spoken.toLowerCase().trim();
+      setCommandTick(t => t + 1);
+    } catch (err) {
+      console.log('[AIModal] onCommandWithTick error:', err?.message);
+    }
   }, []);
 
-  // Handle modal visibility changes
+  // ── Voice hook ────────────────────────────────────────────────────────────
+  const { speak, startListening, resetAll } = useAIVoice({
+    visibleRef, phaseRef, downloadingRef,
+    onCommand: onCommandWithTick,
+    onListeningChange: setIsListening,
+    onTranscript: setTranscript,
+    startPulse, stopPulse,
+  });
+
+  // ── Download hook ─────────────────────────────────────────────────────────
+  const { download } = useAIDownload({
+    location, progressAnim, setProgressValue, setDownloading, downloadingRef,
+  });
+
+  // ── Process pending voice command ─────────────────────────────────────────
+  useEffect(() => {
+    try {
+      if (!pendingCommandRef.current) return;
+
+      if (!mountReadyRef.current) {
+        console.log('[AIModal] command blocked — modal not ready, discarding:', pendingCommandRef.current);
+        pendingCommandRef.current = null;
+        return;
+      }
+
+      const spoken = pendingCommandRef.current;
+      pendingCommandRef.current = null;
+      console.log('[AIModal] processing command:', spoken,
+        '| phase:', phaseRef.current,
+        '| categorySelected:', categorySelectedRef.current);
+
+      if (VOICE_TEST_MODE) return;
+
+      if (spoken.includes('close') || spoken.includes('exit') ||
+        spoken.includes('cancel') || spoken.includes('बंद')) {
+        onClose(); return;
+      }
+
+      const catMatch = BUTTON_DATA.find(b =>
+        spoken.includes(b.label.toLowerCase()) || b.keywords.some(k => spoken.includes(k))
+      );
+      let subMatch = null;
+      const pool = catMatch ? [catMatch] : BUTTON_DATA;
+      for (const cat of pool) {
+        const found = cat.subButtons.find(s =>
+          spoken.includes(s.toLowerCase()) ||
+          (SUB_KEYWORDS[s] && SUB_KEYWORDS[s].some(k => spoken.includes(k)))
+        );
+        if (found) { subMatch = found; break; }
+      }
+
+      if (catMatch && !categorySelectedRef.current) {
+        handleCategoryPress(catMatch.label);
+        return;
+      }
+      if (subMatch && expandedRef.current) {
+        handleSubPress(selectedSecRef.current, subMatch);
+        return;
+      }
+      if (subMatch && !expandedRef.current) {
+        speak('Please select a report type first.');
+      }
+    } catch (err) {
+      console.log('[AIModal] commandTick effect error:', err?.message);
+    }
+  }, [commandTick]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Load location ──────────────────────────────────────────────────────────
+  useEffect(() => {
+    AsyncStorage.getItem('LOCATION_ID')
+      .then(v => { if (v) setLocation(v); })
+      .catch(() => { });
+  }, []);
+
+  // ── Modal open / close ─────────────────────────────────────────────────────
   useEffect(() => {
     if (visible) {
-      // Reset phase and animate in
+      // FIX 1 + FIX 2: reset both guards on every open
+      mountReadyRef.current = false;
+      categorySelectedRef.current = false;
+
       setPhase(0);
+      setHeaderStep(0);
       setExpandedButtons(null);
+      setSelectedSection(null);
+      setSelectedButtonColor(null);
+      setTranscript('');
+      setIsListening(false);
+      // ── Reset download state so progress ring never sticks on reopen ──
+      setDownloading(false);
+      downloadingRef.current = false;
+      progressAnim.setValue(0);
+      setProgressValue(0);
+      pendingCommandRef.current = null;
+      resetAll();
+
       translateY.setValue(500);
       opacity.setValue(0);
-      
+
       Animated.parallel([
-        Animated.timing(translateY, {
-          toValue: 0,
-          duration: 500,
-          useNativeDriver: true,
-        }),
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 300,
-          useNativeDriver: true,
-        }),
+        Animated.timing(translateY, { toValue: 0, duration: 480, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 1, duration: 300, useNativeDriver: true }),
       ]).start(() => {
-        // Start message sequence after animation completes
-        setPhase(1);
+        // Wait 500 ms after animation before accepting any voice commands,
+        // so stale onSpeechEnd events from a previous/crashed session are dropped.
+        setTimeout(() => {
+          mountReadyRef.current = true;
+          console.log('[AIModal] mount settled — commands enabled');
+          setTimeout(() => setPhase(1), 120);
+        }, 500);
       });
     } else {
-      // Animate out
+      mountReadyRef.current = false;
+      resetAll();
+      setPhase(0);
+      setHeaderStep(0);
+      // ── Reset download state on close so progress ring is clean ──
+      setDownloading(false);
+      downloadingRef.current = false;
+      progressAnim.setValue(0);
+      setProgressValue(0);
       Animated.parallel([
-        Animated.timing(translateY, {
-          toValue: 500,
-          duration: 300,
-          useNativeDriver: true,
-        }),
-        Animated.timing(opacity, {
-          toValue: 0,
-          duration: 200,
-          useNativeDriver: true,
-        }),
+        Animated.timing(translateY, { toValue: 500, duration: 280, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0, duration: 200, useNativeDriver: true }),
       ]).start();
     }
-  }, [visible, translateY, opacity]);
+  }, [visible]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Phase progression: each phase triggers the next after a delay
+  // ── Phase progression ──────────────────────────────────────────────────────
   useEffect(() => {
     if (!visible) return;
-    
-    if (phase > 0 && phase < 4) {
-      const timer = setTimeout(() => {
-        setPhase(prev => prev + 1);
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [phase, visible]);
+    let cancelled = false;
+    const wait = ms => new Promise(r => setTimeout(r, ms));
 
-  // Derive visible messages from phase
-  const visibleMessages = messages.slice(0, Math.min(phase, 3));
-  const showButtons = phase >= 4;
-
-  const runProgress = useCallback(() => {
-    progress.removeAllListeners();
-    const listener = progress.addListener(({value}) => {
-      setProgressValue(Math.round(value));
-    });
-
-    progress.stopAnimation(() => {
-      progress.setValue(10);
-      setProgressValue(10);
-
-      Animated.timing(progress, {
-        toValue: 100,
-        duration: 3000,
-        useNativeDriver: false,
-      }).start(() => {
-        progress.removeListener(listener);
-      });
-    });
-  }, [progress]);
-
-  const requestStoragePermission = async () => {
-    if (Platform.OS === 'android') {
-      if (Platform.Version >= 33) {
-        return true;
+    const run = async () => {
+      if (phase === 1) {
+        await speak('Welcome to AI Assistant.');
+        if (cancelled) return;
+        setHeaderStep(1); await wait(500); if (cancelled) return;
+        setHeaderStep(2); await wait(500); if (cancelled) return;
+        setHeaderStep(3); await wait(600); if (cancelled) return;
+        setPhase(2);
       }
-      try {
-        const granted = await PermissionsAndroid.requestMultiple([
-          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-        ]);
-        const readGranted = granted['android.permission.READ_EXTERNAL_STORAGE'] === PermissionsAndroid.RESULTS.GRANTED;
-        const writeGranted = granted['android.permission.WRITE_EXTERNAL_STORAGE'] === PermissionsAndroid.RESULTS.GRANTED;
-        if (!readGranted || !writeGranted) {
-          Toaster('Storage permission denied ❌');
-          return false;
+
+      if (phase === 2) {
+        await speak('Please select a report type. Say MPR, Headwise, All, or Abstract.');
+        if (cancelled) return;
+        // FIX 2: skip startListening if user already tapped/voiced a category
+        if (!categorySelectedRef.current) {
+          console.log('[AIModal] phase 2 — starting listener');
+          startListening();
+        } else {
+          console.log('[AIModal] phase 2 — category already selected, skipping startListening');
         }
-        return true;
-      } catch (err) {
-        console.warn(err);
-        return false;
       }
-    }
-    return true;
-  };
+    };
 
-  const handleButtonPress = category => {
-    const button = buttonData.find(b => b.label === category);
-    setSelectedButtonColor(button?.color);
-    setExpandedButtons(prev => (prev === category ? null : category));
-    setSelectedSection(category);
-  };
+    run();
+    return () => { cancelled = true; };
+  }, [phase, visible]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleSubButtonPress = async (category, sub) => {
-    if (downloading) return;
-    setDownloading(true);
-
-    const permission = await requestStoragePermission();
-    if (!permission) {
-      Toaster('Storage permission denied ❌');
-      setDownloading(false);
-      return;
-    }
-
-    Toaster('Excel sheet is downloading... 📥');
-    runProgress();
-
+  // ── Button handlers ────────────────────────────────────────────────────────
+  const handleCategoryPress = useCallback(async (category) => {
     try {
-      let response = null;
-      const credentials = {office: location};
-
-      if (category === 'MPR') {
-        if (sub === 'Building') response = await buildingAllHEADApi(credentials);
-        else if (sub === 'CRF') response = await CrfMPRreportAllHEADApi(credentials);
-        else if (sub === 'Road') response = await ROADAllHEADApi(credentials);
-        else if (sub === 'Annuity') response = await AunnityAllHEADApi(credentials);
-        else if (sub === 'NABARD') response = await NABARDAllHEADApi(credentials);
-      } else if (category === 'Headwise') {
-        if (sub === 'Building') response = await MASTERHEADWISEREPOSTBuildingApi(credentials);
-        else if (sub === 'CRF') response = await MASTERHEADWISEREPOSTCRFApi(credentials);
-        else if (sub === 'Road') response = await MASTERHEADWISEREPOSTRoadApi(credentials);
-        else if (sub === 'Annuity') response = await MASTERHEADWISEREPOSTAnnuityApi(credentials);
-        else if (sub === 'NABARD') response = await MASTERHEADWISEREPOSTNabardApi(credentials);
-      }
-
-      if (response && response.data) {
-        const jsonData = response.data;
-        const ws = XLSX.utils.json_to_sheet(jsonData);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-        const wbout = XLSX.write(wb, {type: 'base64', bookType: 'xlsx'});
-
-        const {dirs} = ReactNativeBlobUtil.fs;
-        let fileName = `${category}_${sub}_Report_${Date.now()}.xlsx`;
-
-        if (category === 'MPR' && staticData[sub]) {
-          fileName = staticData[sub].fileName;
-        } else if (category === 'Headwise' && HeadWiseData[sub]) {
-          fileName = HeadWiseData[sub].fileName;
-        } else if (category === 'All' && AllHeadWiseData[sub]) {
-          fileName = AllHeadWiseData[sub].fileName;
-        }
-
-        const path = Platform.OS === 'android'
-          ? `${dirs.DownloadDir}/${fileName}`
-          : `${dirs.DocumentDir}/${fileName}`;
-
-        await ReactNativeBlobUtil.fs.writeFile(path, wbout, 'base64');
-        Toaster(`Download successful! Saved to: ${path}`);
-      } else {
-        Toaster('No data found.');
-      }
-    } catch (error) {
-      console.error('Download error:', error);
-      Toaster('Download failed. Please try again.');
-    } finally {
-      setDownloading(false);
+      console.log('[AIModal] handleCategoryPress:', category);
+      categorySelectedRef.current = true;
+      const btn = BUTTON_DATA.find(b => b.label === category);
+      setSelectedButtonColor(btn?.color ?? '#007AFF');
+      setExpandedButtons(category);
+      setSelectedSection(category);
+      await speak(`${category} selected. Now say the section name. Building, C R F, Annuity, NABARD, or Road.`);
+      startListening();
+    } catch (err) {
+      console.log('[AIModal] handleCategoryPress error:', err?.message);
     }
-  };
+  }, [speak, startListening]);
 
-  const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+  const handleSubPress = useCallback(async (category, sub) => {
+    try {
+      console.log('[AIModal] handleSubPress:', category, sub);
+      await download(category, sub, speak);
+      // After download: speak thank-you then close only the modal
+      await speak('Thank you for choosing Swapsoft AI. Your report has been saved to Downloads.');
+      onClose();
+    } catch (err) {
+      console.log('[AIModal] handleSubPress error:', err?.message);
+      onClose();
+    }
+  }, [download, speak, onClose]);
+
+  const showButtons = phase >= 2;
+
+  const HEADER_LINES = [
+    { text: 'महाराष्ट्र शासन', step: 1, style: styles.hl1 },
+    { text: 'सार्वजनिक बांधकाम मंडळ, अकोला', step: 2, style: styles.hl2 },
+    { text: 'AI निर्मित अहवाल', step: 3, style: styles.hl2 },
+  ];
 
   return (
     <Modal transparent visible={visible} animationType="none">
-      <View style={styles.modalOverlay}>
-        <Animated.View
-          style={[styles.modalContainer, {transform: [{translateY}], opacity}]}>
-          <LinearGradient
-            colors={['#F5D5E0', '#E3F2FD']}
-            style={styles.gradientBackground}>
-            
-            {/* Close Button */}
-            <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-              <Text style={styles.closeButtonText}>X</Text>
-            </TouchableOpacity>
+      <View style={styles.overlay}>
+        <Animated.View style={[styles.container, { transform: [{ translateY }], opacity }]}>
+          <LinearGradient colors={['#F5D5E0', '#E3F2FD']} style={styles.gradient}>
 
-            {/* Header */}
-            <View style={styles.HeaderText}>
-              <Text style={styles.Hedermsg}>महाराष्ट्र शासन</Text>
-              <Text style={styles.Hedersubmsg}>सार्वजनिक बांधकाम मंडळ, अकोला</Text>
-              <Text style={styles.Hedersubmsg}>AI निर्मित अहवाल</Text>
+            {/* ── Top bar ──────────────────────────────────────────────── */}
+            <View style={styles.topBar}>
+              <Animated.View style={[
+                styles.listenBadge,
+                { opacity: isListening ? 1 : 0, transform: [{ scale: isListening ? 1 : 0.85 }] },
+              ]}>
+                <View style={styles.glowWrap}>
+                  <Animated.View style={[styles.pulseRing, {
+                    transform: [{ scale: pulseAnim }],
+                    opacity: pulseAnim.interpolate({ inputRange: [1, 1.8], outputRange: [0.5, 0] }),
+                  }]} />
+                  <View style={styles.micDot}>
+                    <Text style={styles.micEmoji}>🎙️</Text>
+                  </View>
+                </View>
+                <View>
+                  <Text style={styles.listenLabel}>AI Listening</Text>
+                  <Text style={styles.listenSub}>Speak now...</Text>
+                </View>
+              </Animated.View>
+
+              <TouchableOpacity style={styles.closeBtn} onPress={onClose}>
+                <Text style={styles.closeTxt}>✕</Text>
+              </TouchableOpacity>
             </View>
 
-            <ScrollView style={styles.scrollContent} contentContainerStyle={styles.scrollContentContainer}>
-              {/* Messages */}
-              <View style={styles.messageContainer}>
-                {visibleMessages.map((msg, index) => (
-                  <View key={index} style={styles.messageBubble}>
-                    <Text style={styles.messageText}>{msg}</Text>
-                  </View>
-                ))}
+            {/* ── Listening status chip (compact, production) ────────────── */}
+            {phase >= 2 && isListening && (
+              <View style={styles.listeningChip}>
+                <Text style={styles.listeningChipTxt}>🎙️  Listening — speak now!</Text>
               </View>
+            )}
 
-              {/* Main Buttons */}
+            {/* ── Manual mic fallback ───────────────────────────────────── */}
+            {!isListening && phase >= 2 && !downloading && (
+              <View style={styles.manualWrap}>
+                <TouchableOpacity style={styles.manualBtn} onPress={startListening}>
+                  <LinearGradient colors={['#007AFF', '#0044CC']} style={styles.manualGrad}>
+                    <Text style={styles.manualTxt}>🎙️  Tap to Speak</Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </View>
+            )}
+
+            {/* ── Marathi header lines ──────────────────────────────────── */}
+            <View style={styles.headerBlock}>
+              {HEADER_LINES.map(({ text, step, style: s }) =>
+                headerStep >= step ? <Text key={step} style={s}>{text}</Text> : null
+              )}
+            </View>
+
+            <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollInner}>
+
+              {/* ── Category buttons ──────────────────────────────────── */}
               {showButtons && (
-                <View>
-                  <View style={styles.buttonRow}>
-                    {buttonData.map((button, index) => (
+                <View style={styles.catSection}>
+                  <View style={styles.catRow}>
+                    {BUTTON_DATA.map((b, i) => (
                       <TouchableOpacity
-                        key={index}
-                        style={[styles.button, {backgroundColor: button.color}]}
-                        onPress={() => handleButtonPress(button.label)}>
-                        <Text style={styles.buttonText} numberOfLines={1}>
-                          {button.label}
-                        </Text>
+                        key={i}
+                        style={[styles.catBtn, { backgroundColor: b.color }]}
+                        onPress={() => handleCategoryPress(b.label)}>
+                        <Text style={styles.catBtnTxt} numberOfLines={1}>{b.label}</Text>
                       </TouchableOpacity>
                     ))}
                   </View>
-                  <View style={styles.instructionBox}>
-                    <Text style={styles.instructionText}>Please select an option</Text>
+                  <View style={styles.hintBox}>
+                    <Text style={styles.hintTxt}>
+                      {expandedButtons
+                        ? `${expandedButtons} → select a section below`
+                        : 'Tap a report type  or  say its name'}
+                    </Text>
                   </View>
                 </View>
               )}
 
-              {/* Sub Buttons */}
+              {/* ── Sub-section buttons ────────────────────────────────── */}
               {expandedButtons && (
-                <View style={styles.subButtonRow}>
-                  {buttonData
-                    .find(b => b.label === expandedButtons)
-                    ?.subButtons.map((sub, subIndex) => (
+                <View style={styles.subRow}>
+                  {BUTTON_DATA.find(b => b.label === expandedButtons)
+                    ?.subButtons.map((sub, i) => (
                       <TouchableOpacity
-                        key={subIndex}
-                        style={[styles.subButton, {backgroundColor: selectedButtonColor}]}
-                        onPress={() => handleSubButtonPress(selectedSection, sub)}>
-                        <Text style={styles.subButtonText}>{sub}</Text>
+                        key={i}
+                        style={[styles.subBtn, { backgroundColor: selectedButtonColor }]}
+                        onPress={() => handleSubPress(selectedSection, sub)}>
+                        <Text style={styles.subBtnTxt}>{sub}</Text>
                       </TouchableOpacity>
                     ))}
                 </View>
               )}
 
-              {/* Download Progress */}
+              {/* ── Download progress ring ────────────────────────────── */}
               {downloading && (
-                <View style={styles.loaderContainer}>
+                <View style={styles.progressWrap}>
                   <Svg height="100" width="100" viewBox="0 0 100 100">
-                    <Circle cx="50" cy="50" r="40" stroke="#ccc" strokeWidth="10" fill="none" />
+                    <Circle cx="50" cy="50" r="40" stroke="#ddd" strokeWidth="10" fill="none" />
                     <AnimatedCircle
-                      cx="50"
-                      cy="50"
-                      r="40"
-                      stroke="#007AFF"
-                      strokeWidth="10"
+                      cx="50" cy="50" r="40"
+                      stroke="#007AFF" strokeWidth="10"
                       strokeDasharray="251.2"
-                      strokeDashoffset={progress.interpolate({
-                        inputRange: [10, 100],
-                        outputRange: [226, 0],
+                      strokeDashoffset={progressAnim.interpolate({
+                        inputRange: [0, 100], outputRange: [251, 0],
                       })}
-                      fill="none"
-                      strokeLinecap="round"
+                      fill="none" strokeLinecap="round"
                     />
                   </Svg>
-                  <Text style={styles.loaderText}>{progressValue}%</Text>
+                  <Text style={styles.progressTxt}>{progressValue}%</Text>
                 </View>
               )}
+
             </ScrollView>
           </LinearGradient>
         </Animated.View>
@@ -384,157 +437,52 @@ const AIModal = ({visible, onClose}) => {
   );
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
 const styles = StyleSheet.create({
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalContainer: {
-    width: width * 0.85,
-    height: height * 0.85,
-    borderRadius: 20,
-    overflow: 'hidden',
-    alignSelf: 'center',
-  },
-  gradientBackground: {
-    flex: 1,
-  },
-  scrollContent: {
-    flex: 1,
-  },
-  scrollContentContainer: {
-    alignItems: 'center',
-    paddingBottom: 20,
-  },
-  messageContainer: {
-    width: '100%',
-    paddingHorizontal: 20,
-    alignItems: 'flex-end',
-    marginTop: 20,
-  },
-  messageBubble: {
-    backgroundColor: '#007AFF',
-    padding: 10,
-    borderRadius: 15,
-    marginVertical: 5,
-    maxWidth: '80%',
-    alignSelf: 'flex-end',
-  },
-  messageText: {
-    color: 'white',
-    fontSize: 16,
-  },
-  // ✅ FIXED: buttonRow uses flexWrap: 'nowrap' to keep all buttons on one line
-  buttonRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    paddingHorizontal: 8,
-    marginTop: 30,
-    paddingBottom: 10,
-    flexWrap: 'nowrap',
-  },
-  // ✅ FIXED: removed flex:1, use paddingHorizontal to size by content
-  button: {
-    paddingVertical: 12,
-    paddingHorizontal: 12,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 3,
-  },
-  // ✅ FIXED: numberOfLines={1} in JSX + this ensures no wrapping
-  buttonText: {
-    fontWeight: 'bold',
-    color: '#333',
-    fontSize: 13,
-    flexShrink: 0,
-  },
-  subButtonRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    marginTop: 10,
-    paddingHorizontal: 10,
-  },
-  subButton: {
-    padding: 10,
-    borderRadius: 10,
-    marginHorizontal: 5,
-    marginBottom: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    minWidth: '28%',
-  },
-  subButtonText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  closeButton: {
-    position: 'absolute',
-    top: 15,
-    right: 15,
-    width: 40,
-    height: 40,
-    backgroundColor: '#FFC0CB',
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 10,
-  },
-  closeButtonText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  loaderContainer: {
-    alignItems: 'center',
-    marginVertical: 20,
-  },
-  loaderText: {
-    marginTop: 10,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  HeaderText: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  Hedermsg: {
-    marginTop: 10,
-    color: 'orange',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  Hedersubmsg: {
-    marginTop: 5,
-    color: 'black',
-    fontSize: 15,
-    fontWeight: 'bold',
-  },
-  instructionBox: {
-    marginTop: 10,
-    backgroundColor: '#EAF4FF',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 12,
-    alignSelf: 'center',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  instructionText: {
-    fontSize: 16,
-    color: '#336699',
-    fontWeight: '500',
-    textAlign: 'center',
-  },
+  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', justifyContent: 'center', alignItems: 'center' },
+  container: { width: width * 0.88, height: height * 0.85, borderRadius: 22, overflow: 'hidden' },
+  gradient: { flex: 1 },
+  scroll: { flex: 1 },
+  scrollInner: { alignItems: 'center', paddingBottom: 28 },
+
+  topBar: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 14, paddingTop: 14, height: 68 },
+  closeBtn: { position: 'absolute', top: 14, right: 14, width: 40, height: 40, backgroundColor: '#FFC0CB', borderRadius: 20, justifyContent: 'center', alignItems: 'center', zIndex: 10 },
+  closeTxt: { fontSize: 20, fontWeight: 'bold', color: '#333' },
+
+  listenBadge: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.92)', paddingHorizontal: 12, paddingVertical: 7, borderRadius: 30, elevation: 8, shadowColor: '#007AFF', shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.3, shadowRadius: 6 },
+  glowWrap: { width: 36, height: 36, justifyContent: 'center', alignItems: 'center', marginRight: 10 },
+  pulseRing: { position: 'absolute', width: 40, height: 40, borderRadius: 20, backgroundColor: '#007AFF' },
+  micDot: { width: 28, height: 28, borderRadius: 14, backgroundColor: '#007AFF', justifyContent: 'center', alignItems: 'center', zIndex: 2 },
+  micEmoji: { fontSize: 14 },
+  listenLabel: { fontSize: 13, color: '#007AFF', fontWeight: '700' },
+  listenSub: { fontSize: 10, color: '#555' },
+
+  listeningChip: { marginHorizontal: 14, marginTop: 6, alignSelf: 'flex-start', backgroundColor: '#007AFF', paddingHorizontal: 14, paddingVertical: 6, borderRadius: 20, elevation: 4 },
+  listeningChipTxt: { color: '#fff', fontSize: 13, fontWeight: '700' },
+
+  manualWrap: { alignItems: 'center', marginTop: 10 },
+  manualBtn: { borderRadius: 24, overflow: 'hidden', elevation: 7 },
+  manualGrad: { paddingHorizontal: 28, paddingVertical: 12 },
+  manualTxt: { color: '#fff', fontSize: 15, fontWeight: '700' },
+
+  headerBlock: { alignItems: 'center', marginTop: 10, paddingHorizontal: 12 },
+  hl1: { fontSize: 20, fontWeight: 'bold', color: '#E65100', marginBottom: 4, textAlign: 'center' },
+  hl2: { fontSize: 15, fontWeight: '600', color: '#1a1a1a', marginBottom: 3, textAlign: 'center' },
+
+  catSection: { width: '100%', alignItems: 'center' },
+  catRow: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%', paddingHorizontal: 8, marginTop: 24, paddingBottom: 6, flexWrap: 'nowrap' },
+  catBtn: { paddingVertical: 12, paddingHorizontal: 14, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginHorizontal: 3, elevation: 3 },
+  catBtnTxt: { fontWeight: 'bold', color: '#fff', fontSize: 13 },
+
+  hintBox: { marginTop: 10, backgroundColor: '#EAF4FF', paddingVertical: 9, paddingHorizontal: 16, borderRadius: 12, alignSelf: 'center', elevation: 2 },
+  hintTxt: { fontSize: 13, color: '#336699', fontWeight: '500', textAlign: 'center' },
+
+  subRow: { flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap', marginTop: 14, paddingHorizontal: 10 },
+  subBtn: { paddingVertical: 11, paddingHorizontal: 14, borderRadius: 10, marginHorizontal: 5, marginBottom: 10, alignItems: 'center', minWidth: '28%', elevation: 2 },
+  subBtnTxt: { fontSize: 14, fontWeight: 'bold', color: '#fff' },
+
+  progressWrap: { alignItems: 'center', marginVertical: 24 },
+  progressTxt: { marginTop: 8, fontSize: 16, fontWeight: 'bold', color: '#333' },
 });
 
 export default AIModal;

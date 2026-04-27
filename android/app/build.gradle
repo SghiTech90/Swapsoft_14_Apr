@@ -78,9 +78,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.SmartBudgetPWDA"
+    namespace "com.smartbudgetpwda"
     defaultConfig {
-        applicationId "com.SmartBudgetPWDA"
+        applicationId "com.smartbudgetpwda"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

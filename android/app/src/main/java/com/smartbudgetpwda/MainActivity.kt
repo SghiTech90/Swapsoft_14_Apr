@@ -1,4 +1,4 @@
-package com.SmartBudgetPWDA
+package com.smartbudgetpwda
 
 import android.os.Bundle
 import com.facebook.react.ReactActivity

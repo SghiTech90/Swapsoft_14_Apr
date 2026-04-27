@@ -33,7 +33,6 @@ export async function HomeAllimageapi(credentials) {
 }
 
 export async function RollwiseImageApi(credentials) {
-  console.log('RollwiseImageApi', credentials);
   if (
     !credentials ||
     !credentials.office ||
@@ -52,7 +51,6 @@ export async function RollwiseImageApi(credentials) {
       body: JSON.stringify(credentials),
     });
     const result = await response.json();
-    console.log(result);
     if (!response.ok) {
       throw new Error(
         `HTTP ${response.status}: ${result.message || 'Unknown error'}`,

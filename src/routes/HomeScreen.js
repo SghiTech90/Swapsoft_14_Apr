@@ -64,7 +64,6 @@ const getImageUri = img => {
     !uri.includes('w_')
   ) {
     uri = uri.replace('/upload/', '/upload/w_400,q_auto,f_auto/');
-    console.log('⚡ Optimized Cloudinary URI:', uri);
   }
 
   return uri;
@@ -336,13 +335,8 @@ const HomeScreen = ({navigation}) => {
     if (!location) return;
     setLoadingImages(true);
     try {
-      console.log('📥 Fetching all images for office:', location);
       const response = await HomeAllimageapi({office: location});
       if (response?.success && Array.isArray(response.data)) {
-        console.log(`✅ Fetched ${response.data.length} images`);
-        if (response.data.length > 0) {
-          console.log('🔍 First Image:', JSON.stringify(response.data[0], null, 2));
-        }
         // ✅ Store full objects — footer needs metadata fields
         setImageData(response.data);
       } else {
