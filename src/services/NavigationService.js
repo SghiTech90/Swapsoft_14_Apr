@@ -23,11 +23,11 @@ const goBack = () => {
   }
 };
 
-const replace = (routeName, params) => {
+const reset = (routeName, params) => {
   if (navigator) {
     navigator.dispatch(
       CommonActions.reset({
-        index: 1,
+        index: 0,
         routes: [
           {
             name: routeName,
@@ -39,4 +39,6 @@ const replace = (routeName, params) => {
   }
 };
 
-export default {navigate, goBack, setTopLevelNavigator, replace};
+const replace = reset;
+
+export default {navigate, goBack, setTopLevelNavigator, reset, replace};

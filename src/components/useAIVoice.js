@@ -17,8 +17,10 @@ export default function useAIVoice({
   visibleRef,
   phaseRef,
   downloadingRef,
+  continuousListenRef,
   onCommand,
   onListeningChange,
+  onSpeakingChange,
   onTranscript,
   startPulse,
   stopPulse,
@@ -27,9 +29,35 @@ export default function useAIVoice({
   const isSpeakingRef     = useRef(false);
   const suppressUntilRef  = useRef(0);
   const onCommandRef      = useRef(onCommand);
+  const onSpeakingChangeRef = useRef(onSpeakingChange);
   const sessionActiveRef  = useRef(false);
   const mountedRef        = useRef(true);
   const startingRef       = useRef(false);
+  const listenAbortRef    = useRef(false);
+  const startListeningRef = useRef(null);
+
+  const keepMicUiOn = useCallback(() => {
+    isListeningRef.current = true;
+    if (mountedRef.current) {
+      onListeningChange(true);
+      startPulse();
+    }
+  }, [onListeningChange, startPulse]);
+
+  const scheduleContinuousRestart = useCallback(() => {
+    if (!continuousListenRef?.current) return;
+    setTimeout(() => {
+      if (
+        continuousListenRef?.current &&
+        visibleRef.current &&
+        !isSpeakingRef.current &&
+        !listenAbortRef.current &&
+        mountedRef.current
+      ) {
+        startListeningRef.current?.({ quick: true });
+      }
+    }, 500);
+  }, [continuousListenRef, visibleRef]);
 
   // Incremented on every Voice.start() — listeners use it to reject stale events
   const sessionIdRef      = useRef(0);
@@ -41,6 +69,13 @@ export default function useAIVoice({
   const partialFallbackTimerRef = useRef(null);
 
   useEffect(() => { onCommandRef.current = onCommand; }, [onCommand]);
+  useEffect(() => { onSpeakingChangeRef.current = onSpeakingChange; }, [onSpeakingChange]);
+
+  const setSpeaking = useCallback((value) => {
+    if (mountedRef.current && onSpeakingChangeRef.current) {
+      onSpeakingChangeRef.current(value);
+    }
+  }, []);
 
   // ── helpers ──────────────────────────────────────────────────────────────
   const safeFireCommand = useCallback((spoken, source) => {
@@ -68,6 +103,7 @@ export default function useAIVoice({
     return new Promise((resolve) => {
       console.log('[TTS] speaking:', text);
       isSpeakingRef.current    = true;
+      setSpeaking(true);
       suppressUntilRef.current = Date.now() + 1500;
 
       let resolved = false;
@@ -79,6 +115,7 @@ export default function useAIVoice({
           resolved = true;
           try { fSub.remove(); cSub.remove(); } catch (_) {}
           isSpeakingRef.current = false;
+          setSpeaking(false);
           resolve();
         }
       }, 12000);
@@ -90,6 +127,7 @@ export default function useAIVoice({
           clearTimeout(safetyTimer);
           try { fSub.remove(); cSub.remove(); } catch (_) {}
           isSpeakingRef.current = false;
+          setSpeaking(false);
           resolve();
         }
       };
@@ -104,7 +142,7 @@ export default function useAIVoice({
       Tts.stop();
       Tts.speak(text);
     });
-  }, []);
+  }, [setSpeaking]);
 
   // ── wireListeners ────────────────────────────────────────────────────────
   const wireListeners = useCallback(() => {
@@ -146,8 +184,12 @@ export default function useAIVoice({
             partialFallbackTimerRef.current = null;
             safeFireCommand(lastSpokenRef.current, 'partial-after-end-timer');
             if (mountedRef.current) {
-              onListeningChange(false);
-              stopPulse();
+              if (continuousListenRef?.current) {
+                scheduleContinuousRestart();
+              } else {
+                onListeningChange(false);
+                stopPulse();
+              }
             }
           }, 800);
         }
@@ -189,8 +231,12 @@ export default function useAIVoice({
           safeFireCommand(lastSpokenRef.current, 'onSpeechError-fallback');
         }
         if (!mountedRef.current) return;
-        onListeningChange(false);
-        stopPulse();
+        if (continuousListenRef?.current) {
+          scheduleContinuousRestart();
+        } else {
+          onListeningChange(false);
+          stopPulse();
+        }
       } catch (err) {
         console.log('[Voice] onSpeechError handler error:', err?.message);
       }
@@ -202,6 +248,8 @@ export default function useAIVoice({
           '| lastSpoken:', lastSpokenRef.current);
         sessionActiveRef.current = false;
         isListeningRef.current   = false;
+
+        const continuous = !!continuousListenRef?.current;
 
         // Only fire command immediately if we already have a partial.
         // If lastSpoken is empty, the partial might arrive shortly after —
@@ -218,33 +266,72 @@ export default function useAIVoice({
             if (!commandFiredRef.current && lastSpokenRef.current) {
               safeFireCommand(lastSpokenRef.current, 'late-partial-timer');
             }
-            if (mountedRef.current) {
+            if (!mountedRef.current) return;
+            if (continuous) {
+              keepMicUiOn();
+              scheduleContinuousRestart();
+            } else {
               onListeningChange(false);
               stopPulse();
             }
           }, 1200);
-          return; // Don't call onListeningChange(false) yet
+          if (continuous) keepMicUiOn();
+          return;
         }
 
         if (!mountedRef.current) return;
-        onListeningChange(false);
-        stopPulse();
+        if (continuous) {
+          keepMicUiOn();
+          scheduleContinuousRestart();
+        } else {
+          onListeningChange(false);
+          stopPulse();
+        }
       } catch (err) {
         console.log('[Voice] onSpeechEnd handler error:', err?.message);
       }
     };
-  }, [onListeningChange, onTranscript, startPulse, stopPulse, visibleRef, safeFireCommand]);
+  }, [
+    onListeningChange, onTranscript, startPulse, stopPulse, visibleRef,
+    safeFireCommand, continuousListenRef, keepMicUiOn, scheduleContinuousRestart,
+  ]);
 
   // ── startListening ────────────────────────────────────────────────────────
-  const startListening = useCallback(async () => {
-    if (startingRef.current)    { console.log('[Voice] skip: already starting'); return; }
-    if (isSpeakingRef.current)  { console.log('[Voice] skip: TTS active');       return; }
-    if (!visibleRef.current)    { console.log('[Voice] skip: modal hidden');      return; }
-    if (phaseRef.current < 2)   { console.log('[Voice] skip: phase < 2');        return; }
-    if (downloadingRef.current) { console.log('[Voice] skip: downloading');       return; }
+  const startListening = useCallback(async (options) => {
+    const quick = !!options?.quick;
+    const force = !!options?.force || quick;
 
+    if (!quick && startingRef.current) {
+      console.log('[Voice] skip: already starting');
+      return false;
+    }
+    if (!quick && isSpeakingRef.current && !force) {
+      console.log('[Voice] skip: TTS active');
+      return false;
+    }
+    if (!visibleRef.current)    { console.log('[Voice] skip: modal hidden');      return false; }
+    if (phaseRef.current < 2)   { console.log('[Voice] skip: phase < 2');        return false; }
+    if (downloadingRef.current) { console.log('[Voice] skip: downloading');       return false; }
+
+    listenAbortRef.current = false;
     startingRef.current = true;
-    console.log('[Voice] startListening — full clean start');
+    console.log('[Voice] startListening —', quick ? 'quick restart' : 'full clean start');
+
+    if (isSpeakingRef.current && force) {
+      try { Tts.stop(); } catch (_) {}
+      isSpeakingRef.current = false;
+      setSpeaking(false);
+      await new Promise(r => setTimeout(r, 250));
+    }
+
+    const abortListening = () => {
+      sessionActiveRef.current = false;
+      isListeningRef.current   = false;
+      if (mountedRef.current) {
+        onListeningChange(false);
+        stopPulse();
+      }
+    };
 
     try {
       if (Platform.OS === 'android') {
@@ -253,24 +340,52 @@ export default function useAIVoice({
           { title: 'Microphone', message: 'AI needs mic access.', buttonPositive: 'OK', buttonNegative: 'Cancel' },
         );
         if (r !== PermissionsAndroid.RESULTS.GRANTED) {
-          console.log('[Voice] mic denied'); return;
+          console.log('[Voice] mic denied');
+          return false;
         }
         console.log('[Voice] mic granted');
       }
+
+      if (listenAbortRef.current) { console.log('[Voice] aborted before start'); return false; }
 
       clearPartialFallback();
       lastSpokenRef.current   = '';
       commandFiredRef.current = false;
 
-      console.log('[Voice] stopping & destroying previous session...');
-      try { await Voice.stop();    } catch (_) {}
-      try { await Voice.destroy(); } catch (_) {}
+      // Optimistic UI — flip button & visualizer immediately
+      isListeningRef.current = true;
+      if (mountedRef.current) {
+        onListeningChange(true);
+        startPulse();
+      }
 
-      console.log('[Voice] waiting 2000ms for OS release...');
-      await new Promise(r => setTimeout(r, 2000));
+      if (!quick) {
+        console.log('[Voice] stopping & destroying previous session...');
+        try { await Voice.stop();    } catch (_) {}
+        try { await Voice.destroy(); } catch (_) {}
+      } else {
+        try { await Voice.stop(); } catch (_) {}
+      }
 
-      if (!visibleRef.current || isSpeakingRef.current || downloadingRef.current) {
-        console.log('[Voice] guard failed after wait — aborting'); return;
+      const waitMs = quick ? 350 : 2000;
+      console.log(`[Voice] waiting ${waitMs}ms for OS release...`);
+      await new Promise(r => setTimeout(r, waitMs));
+
+      if (listenAbortRef.current) {
+        console.log('[Voice] aborted during wait');
+        abortListening();
+        return false;
+      }
+
+      if (!visibleRef.current || downloadingRef.current) {
+        console.log('[Voice] guard failed after wait — aborting');
+        abortListening();
+        return false;
+      }
+      if (!force && isSpeakingRef.current) {
+        console.log('[Voice] guard failed after wait — TTS active');
+        abortListening();
+        return false;
       }
 
       wireListeners();
@@ -290,24 +405,44 @@ export default function useAIVoice({
           console.log('[Voice] trying locale:', locale);
           await Voice.start(locale, opts);
           console.log('[Voice] ✅ started with locale:', locale);
-          return;
+          return true;
         } catch (e) {
           console.log('[Voice] locale failed:', locale, e?.message);
         }
       }
 
       console.log('[Voice] ❌ all locales failed');
-      sessionActiveRef.current = false;
-      isListeningRef.current   = false;
-      if (mountedRef.current) onListeningChange(false);
+      abortListening();
+      return false;
     } catch (err) {
       console.log('[Voice] startListening fatal error:', err?.message);
-      sessionActiveRef.current = false;
-      if (mountedRef.current) onListeningChange(false);
+      abortListening();
+      return false;
     } finally {
       startingRef.current = false;
     }
-  }, [visibleRef, phaseRef, downloadingRef, onListeningChange, wireListeners]);
+  }, [visibleRef, phaseRef, downloadingRef, onListeningChange, wireListeners, setSpeaking]);
+
+  useEffect(() => {
+    startListeningRef.current = startListening;
+  }, [startListening]);
+
+  // ── stopListening — user manually stops the mic ───────────────────────────
+  const stopListening = useCallback(async () => {
+    console.log('[Voice] stopListening — user stopped mic');
+    listenAbortRef.current   = true;
+    clearPartialFallback();
+    sessionActiveRef.current = false;
+    isListeningRef.current   = false;
+    startingRef.current      = false;
+    try { await Voice.stop(); } catch (_) {}
+    try { await Voice.destroy(); } catch (_) {}
+    if (mountedRef.current) {
+      onListeningChange(false);
+      onTranscript('');
+    }
+    stopPulse();
+  }, [onListeningChange, onTranscript, stopPulse]);
 
   // ── Mount: TTS init ───────────────────────────────────────────────────────
   useEffect(() => {
@@ -346,8 +481,9 @@ export default function useAIVoice({
     Voice.stop().catch(() => {});
     Voice.destroy().catch(() => {});
     if (mountedRef.current) onListeningChange(false);
+    setSpeaking(false);
     stopPulse();
-  }, [onListeningChange, stopPulse]);
+  }, [onListeningChange, stopPulse, setSpeaking]);
 
-  return { speak, startListening, resetAll };
+  return { speak, startListening, stopListening, resetAll };
 }

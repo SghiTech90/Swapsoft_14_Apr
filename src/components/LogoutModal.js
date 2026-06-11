@@ -21,11 +21,11 @@ const LogoutModal = ({visible, onConfirm, onCancel}) => {
             <Image
               source={require('../assets/images/smartbudget_logo_circle.png')}
               style={styles.logo}
-            />{' '}
+            />
           </View>
           <Text style={styles.modalTitle}>Logout</Text>
           <Text style={styles.modalMessage}>
-            {'     '}Are you sure you want to logout?
+            Are you sure you want to logout?
           </Text>
 
           <TouchableOpacity style={styles.modalButton} onPress={onConfirm}>

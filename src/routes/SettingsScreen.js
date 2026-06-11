@@ -7,19 +7,27 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
+  InteractionManager,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import LogoutModal from '../components/LogoutModal';
+import NavigationService from '../services/NavigationService';
 
 
 const SettingsScreen = ({navigation}) => {
   const [logoutModalVisible, setLogoutModalVisible] = useState(false);
 
   const handleLogout = async () => {
-    setLogoutModalVisible(false);
-    await AsyncStorage.clear();
-    navigation.replace('DashBoardScreen');
+    try {
+      setLogoutModalVisible(false);
+      await AsyncStorage.clear();
+      InteractionManager.runAfterInteractions(() => {
+        NavigationService.reset('DashBoardScreen');
+      });
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
   return (
